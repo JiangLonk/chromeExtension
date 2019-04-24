@@ -1,0 +1,100 @@
+﻿{
+  "name": "????",
+  "version": "0.0.1",
+  "manifest_version": 2,
+  "description": "????",
+  "icons": {
+    "16": "z.png",
+    "48": "z.png",
+    "128": "z.png"
+  },
+  "permissions": [
+    "tabs",
+    "notifications",
+    "storage",
+    "<all_urls>",
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "scripts": [
+      "js/lib/jquery-1.8.3.min.js",
+      "js/utils.js",
+      "js/background.js"
+    ]
+  },
+  "browser_action": {
+    "default_icon": "z.png",
+    "default_title": "????",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://hometest.chinayasha.com:888/managment/frame/main.jhtml"
+      ],
+      "js": [
+        "js/lib/jquery-1.8.3.min.js",
+        "js/utils.js",
+        "js/content_scripts/name_replace.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://zhuanlan.zhihu.com/**",
+        "https://www.zhihu.com/**"
+      ],
+      "js": [
+        "js/lib/jquery-1.8.3.min.js",
+        "js/utils.js",
+        "js/content_scripts/zhihu_fuzzy.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://blog.csdn.net/**"
+      ],
+      "js": [
+        "js/lib/jquery-1.8.3.min.js",
+        "js/utils.js",
+        "js/content_scripts/csdn_expend.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "https://git.chinayasha.com/v-zhangkaicheng"
+      ],
+      "js": [
+        "js/lib/jquery-1.8.3.min.js",
+        "js/utils.js",
+        "js/content_scripts/gitlab_commit_count.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/lib/jquery-1.8.3.min.js",
+        "js/utils.js",
+        "js/content_scripts/smshxb.js"
+      ],
+      "run_at": "document_end"
+    },
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "js/lib/jquery-1.8.3.min.js",
+        "js/utils.js",
+        "js/content_scripts/test.js"
+      ],
+      "run_at": "document_end"
+    }
+  ]
+}

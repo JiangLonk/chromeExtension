@@ -1,0 +1,22 @@
+.header {
+    width: 300px;
+    height: 7px;
+    text-align: center;
+}
+
+.header .label {
+    cursor: pointer;
+    max-width: 80px;
+    margin: 10px auto;
+    display: block;
+    -webkit-user-select: none;
+}
+
+.context {
+    width: 300px;
+    height: 300px;
+}
+
+* {
+    font-family: "Comic Sans MS", serif;
+}
